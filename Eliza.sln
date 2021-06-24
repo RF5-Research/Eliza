@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliza.Linux", "Eliza.Linux\Eliza.Linux.csproj", "{C4480F78-9014-4C44-8BE5-62855A1AE4D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliza.Mac", "Eliza.Mac\Eliza.Mac.csproj", "{A2227C89-B9FE-49F2-B8F4-6DE1565D90CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliza.Windows", "Eliza.Windows\Eliza.Windows.csproj", "{04AC34A8-F18B-41D4-AE64-30C1C30ACF55}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7D939974-68E3-4C0A-80FF-43D7FD857BF9} = {7D939974-68E3-4C0A-80FF-43D7FD857BF9}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliza.UI", "Eliza.UI\Eliza.UI.csproj", "{7D939974-68E3-4C0A-80FF-43D7FD857BF9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eliza", "Eliza\Eliza.csproj", "{4FACE973-3783-484F-BD60-01A844A7BFB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{817AB7EE-E104-4893-84E0-26D764DF3378}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4480F78-9014-4C44-8BE5-62855A1AE4D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4480F78-9014-4C44-8BE5-62855A1AE4D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4480F78-9014-4C44-8BE5-62855A1AE4D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4480F78-9014-4C44-8BE5-62855A1AE4D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2227C89-B9FE-49F2-B8F4-6DE1565D90CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2227C89-B9FE-49F2-B8F4-6DE1565D90CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2227C89-B9FE-49F2-B8F4-6DE1565D90CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2227C89-B9FE-49F2-B8F4-6DE1565D90CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04AC34A8-F18B-41D4-AE64-30C1C30ACF55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04AC34A8-F18B-41D4-AE64-30C1C30ACF55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04AC34A8-F18B-41D4-AE64-30C1C30ACF55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04AC34A8-F18B-41D4-AE64-30C1C30ACF55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D939974-68E3-4C0A-80FF-43D7FD857BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D939974-68E3-4C0A-80FF-43D7FD857BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D939974-68E3-4C0A-80FF-43D7FD857BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D939974-68E3-4C0A-80FF-43D7FD857BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FACE973-3783-484F-BD60-01A844A7BFB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FACE973-3783-484F-BD60-01A844A7BFB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FACE973-3783-484F-BD60-01A844A7BFB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FACE973-3783-484F-BD60-01A844A7BFB1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C4480F78-9014-4C44-8BE5-62855A1AE4D9} = {817AB7EE-E104-4893-84E0-26D764DF3378}
+		{A2227C89-B9FE-49F2-B8F4-6DE1565D90CA} = {817AB7EE-E104-4893-84E0-26D764DF3378}
+		{04AC34A8-F18B-41D4-AE64-30C1C30ACF55} = {817AB7EE-E104-4893-84E0-26D764DF3378}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DD8D595-CAE7-4762-A12E-DB610E6A6158}
+	EndGlobalSection
+EndGlobal
