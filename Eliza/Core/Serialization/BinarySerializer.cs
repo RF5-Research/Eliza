@@ -110,7 +110,7 @@ namespace Eliza.Core.Serialization
                     WriteValue(value);
                 }
             }
-            //The only instance of the use of max, doesn't seem to have an affect regardless of the length is (i.e. FurnitureData)
+            //The only instance of the use of max, doesn't seem to have an effect regardless of the length is (i.e. FurnitureData)
         }
 
         private void WriteString(string value, int max = 0)
@@ -169,7 +169,8 @@ namespace Eliza.Core.Serialization
 
                 var data = reader.ReadBytes(paddedSize - headerSize);
 
-                var encryptedData = Cryptography.Encrypt(data);
+                //var encryptedData = Cryptography.Encrypt(data);
+                var encryptedData = data;
 
                 //Overwrite save data with encrypted data
                 BaseStream.Position = headerSize;

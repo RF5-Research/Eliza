@@ -83,15 +83,14 @@ namespace Eliza
                         try
                         {
                             _saveData = Model.SaveData.SaveData.Read(_path);
+                            headerButton.Enabled = true;
+                            data.Enabled = true;
+                            footer.Enabled = true;
                         }
                         catch
                         {
                             MessageBox.Show("Error: Incompatible/invalid save file found. Please report the issue on Github.");
                         }
-                        
-                        headerButton.Enabled = true;
-                        data.Enabled = true;
-                        footer.Enabled = true;
                     }
                 }
             }
@@ -123,7 +122,6 @@ namespace Eliza
                 var dataForm = new DataForm(_saveData);
                 dataForm.Show();
             }
-
 
             void FooterButton_Click(object sender, EventArgs e)
             {

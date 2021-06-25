@@ -6,8 +6,8 @@ namespace Eliza.Model
 	public class NpcDateSaveParameter
 	{
 		public int ProgressType;
-		public int dateType;
-		public int dateSpotID;
+		public int DateType;
+		public int DateSpotID;
 		public int NpcId;
 		public int dateStartTime;
 		public int meetingLimitTime;

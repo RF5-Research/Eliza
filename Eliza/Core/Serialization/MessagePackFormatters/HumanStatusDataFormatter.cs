@@ -39,13 +39,6 @@ namespace Eliza.Core.Serialization.MessagePackFormatters
             reader.ReadString();  //E
 
             var humanEquip = new HumanEquip();
-            //var length = reader.ReadArrayHeader();
-            //var list = new ItemData[length];
-
-            //for (int i = 0; i < length; i++)
-            //{
-            //    list[i] = resolver.GetFormatterWithVerify<ItemData>().Deserialize(ref reader, options);
-            //}
             humanEquip.EquipItems = resolver.GetFormatterWithVerify<ItemData[]>().Deserialize(ref reader, options);
             humanStatusData.HumanEquip = humanEquip;
             humanStatusData.PartnerMovementOrderType = reader.TryReadNil() ? -1 : reader.ReadInt32();

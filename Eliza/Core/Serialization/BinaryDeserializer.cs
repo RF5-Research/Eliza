@@ -347,19 +347,6 @@ namespace Eliza.Core.Serialization
         {
             var length = Reader.ReadInt32();
             var data = Reader.ReadBytes(length);
-            //if (typeof(HumanStatusData) == type)
-            //{
-            //    var reader = new MessagePackReader(data);
-            //    var formatter = new HumanStatusDataFormatter();
-            //    return formatter.Deserialize(ref reader, MessagePackSerializerOptions.Standard);
-            //}
-            //if (typeof(FriendMonsterStatusData) == type)
-            //{
-            //    var reader = new MessagePackReader(data);
-            //    var formatter = new FriendMonsterStatusDataFormatter();
-            //    return formatter.Deserialize(ref reader, MessagePackSerializerOptions.Standard);
-            //}
-
             return MessagePackSerializer.Deserialize(type, data);
         }
     }
