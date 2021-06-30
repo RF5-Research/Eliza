@@ -88,7 +88,7 @@ namespace Eliza.UI.Forms
                 Text = "Item Data"
             };
 
-            itemDataButton.Click += ItemataButton_Click;
+            itemDataButton.Click += ItemDataButton_Click;
 
             var supportMonsterDataButton = new Button()
             {
@@ -223,6 +223,42 @@ namespace Eliza.UI.Forms
             eventDataForm.Show();
         }
 
+        private void NpcDataButton_Click(object sender, EventArgs e)
+        {
+            var npcDataForm = new NPCDataForm(_saveData.saveData.npcData);
+            npcDataForm.Show();
+        }
+
+        private void FishingDataButton_Click(object sender, EventArgs e)
+        {
+            var fishingDataForm = new FishingDataForm(_saveData.saveData.fishingData);
+            fishingDataForm.Show();
+        }
+
+        private void StampDataButton_Click(object sender, EventArgs e)
+        {
+            var stampDataForm = new StampDataForm(_saveData.saveData.stampData);
+            stampDataForm.Show();
+        }
+
+        private void FurnitureDataButton_Click(object sender, EventArgs e)
+        {
+            var furnitureDataForm = new FurnitureDataForm(_saveData.saveData.furnitureData);
+            furnitureDataForm.Show();
+        }
+
+        private void BattleDataButton_Click(object sender, EventArgs e)
+        {
+            var battleDataForm = new BattleDataForm(_saveData.saveData.battleData);
+            battleDataForm.Show();
+        }
+
+        private void ItemDataButton_Click(object sender, EventArgs e)
+        {
+            var itemDataForm = new ItemDataForm(_saveData.saveData.itemData);
+            itemDataForm.Show();
+        }
+
         private void ShippingDataButton_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
@@ -278,34 +314,8 @@ namespace Eliza.UI.Forms
             throw new NotImplementedException();
         }
 
-        private void ItemataButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
-        private void BattleDataButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
-        private void FurnitureDataButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
-        private void StampDataButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void FishingDataButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void NpcDataButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

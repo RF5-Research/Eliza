@@ -2,7 +2,6 @@
 using Org.BouncyCastle.Crypto.Engines;
 using Org.BouncyCastle.Crypto.Modes;
 using Org.BouncyCastle.Crypto.Parameters;
-using System.IO;
 using System.Text;
 
 namespace Eliza.Core
@@ -21,8 +20,7 @@ namespace Eliza.Core
 
         public static byte[] RijndaelCrypto(byte[] data, bool isEncrypting)
         {
-            //RF5 uses 256 block Rijndael Encryption
-            //Byte not bit
+            //RF5 uses 256bit block Rijndael Encryption
             var aesKey = Encoding.UTF8.GetBytes("1cOSvkZ4HQCi6z/yQpEEl4neB+AIXwTX");
             var aesIV = Encoding.UTF8.GetBytes("XuMigxpK61gLwgo1RsreLLGPcw3vJFze");
             var engine = new RijndaelEngine(256);

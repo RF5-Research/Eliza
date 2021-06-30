@@ -1,4 +1,5 @@
-﻿using Eto.Forms;
+﻿using Eliza.UI.Helpers;
+using Eto.Forms;
 using System;
 using System.Text;
 
@@ -8,21 +9,21 @@ namespace Eliza.UI.Widgets
     {
         public TextBox textBox = new TextBox();
 
-        public LineEdit(Ref<char[]> value, string text) : base(text)
+        public LineEdit(Ref<char[]> value, string text = "") : base(text)
         {
             _valueType = value.Value.GetType();
             _value = value;
             Setup();
         }
 
-        public LineEdit(Ref<string> value, string text) : base(text)
+        public LineEdit(Ref<string> value, string text = "") : base(text)
         {
             _valueType = value.Value.GetType();
             _value = value;
             Setup();
         }
 
-        public LineEdit(string text) : base(text)
+        public LineEdit(string text = "") : base(text)
         {
             Items.Add(textBox);
         }

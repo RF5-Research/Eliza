@@ -22,6 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Resources\Data\NPCID.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Resources\Data\SkillData.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -1,16 +1,14 @@
 ﻿using Eliza.Model.SaveData;
+using Eliza.UI.Helpers;
 using Eliza.UI.Widgets;
 using Eto.Drawing;
 using Eto.Forms;
-using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Text;
 
 namespace Eliza.UI.Forms
 {
-    public class PlayerDataForm : Form
+    internal class PlayerDataForm : Form
     {
         public PlayerDataForm(RF5PlayerData playerData)
         {
@@ -73,11 +71,7 @@ namespace Eliza.UI.Forms
                 var expSpinBox = new SpinBox("Exp");
                 var levelSpinBox = new SpinBox("Level");
 
-                var dict = new Dictionary<string, dynamic>();
-                using (StreamReader fs = File.OpenText("Resources/Data/SkillData.json"))
-                {
-                    dict = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(fs.ReadToEnd());
-                }
+                var dict = Helpers.Json.Load("Resources/Data/SkillData.json");
 
                 for (int i = 0; i < playerData.SkillDatas.Length; i++)
                 {
@@ -119,7 +113,6 @@ namespace Eliza.UI.Forms
             var dualCookActor = new SpinBox(new Ref<int>(() => playerData.DualCookActor, v => { playerData.DualCookActor = v; }), "Dual Cook Actor");
             var dualFishingActor = new SpinBox(new Ref<int>(() => playerData.DualFishingActor, v => { playerData.DualFishingActor = v; }), "Dual Fishing Actor");
 
-
             StackLayoutItem[] vBoxItems =
             {
                 playerGold,
@@ -149,7 +142,9 @@ namespace Eliza.UI.Forms
                 vBox.Items.Add(item);
             }
 
-            Content = vBox;
+            var scroll = new Scrollable();
+            scroll.Content = vBox;
+            Content = scroll;
         }
     }
 }

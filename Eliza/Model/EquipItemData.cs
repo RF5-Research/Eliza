@@ -27,5 +27,11 @@ namespace Eliza.Model
         [IgnoreMember]
 		private static Dictionary<int, int> SameItemNum;
 
+        public EquipItemData()
+        {
+            AddedItems = new int[0];
+            ArrangeItems = new int[0];
+            SourceItems = new int[0];
+        }
 	}
 }

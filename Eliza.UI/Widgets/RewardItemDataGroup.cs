@@ -1,4 +1,5 @@
-﻿using Eto.Forms;
+﻿using Eliza.UI.Helpers;
+using Eto.Forms;
 
 namespace Eliza.UI.Widgets
 {

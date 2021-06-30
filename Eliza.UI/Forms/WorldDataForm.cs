@@ -1,10 +1,11 @@
-﻿using Eliza.UI.Widgets;
+﻿using Eliza.UI.Helpers;
+using Eliza.UI.Widgets;
 using Eto.Forms;
 using System;
 
 namespace Eliza.UI.Forms
 {
-    public class WorldDataForm : Form
+    internal class WorldDataForm : Form
     {
         public WorldDataForm(Model.SaveData.RF5WorldData worldData)
         {
@@ -16,7 +17,6 @@ namespace Eliza.UI.Forms
             var difficultyValue = new SpinBox(new Ref<byte>(() => worldData.DifficultyValue, v => { worldData.DifficultyValue = v; }), "Difficulty");
             var scenarioStoppedTine = new SpinBox(new Ref<int>(() => worldData.ScenarioStoppedTime, v => { worldData.ScenarioStoppedTime = v; }), "Scenario Stopped Time");
             var mapId = new SpinBox(new Ref<int>(() => worldData.MapId, v => { worldData.MapId = v; }), "Map ID");
-
 
             var position = new Vector3Group(
                 new Ref<float>(() => worldData.Position.X, v => { worldData.Position.X = v; }),

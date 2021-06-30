@@ -7,5 +7,10 @@ namespace Eliza.Model
     {
         [Key(3)]
         public bool IsArrange;
+
+        public FoodItemData()
+        {
+            SourceItems = new int[0];
+        }
     }
 }

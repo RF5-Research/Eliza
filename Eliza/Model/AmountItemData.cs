@@ -8,5 +8,10 @@ namespace Eliza.Model
     {
         [Key(1)]
         public List<int> LevelAmount;
+
+        public AmountItemData()
+        {
+            LevelAmount = new List<int>();
+        }
     }
 }

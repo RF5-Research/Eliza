@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Eliza.UI
+namespace Eliza.UI.Helpers
 {
     public class Ref<T>
     {

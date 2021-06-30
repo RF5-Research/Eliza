@@ -1,4 +1,5 @@
-﻿using Eto.Forms;
+﻿using Eliza.UI.Helpers;
+using Eto.Forms;
 using System;
 
 namespace Eliza.UI.Widgets
@@ -8,7 +9,7 @@ namespace Eliza.UI.Widgets
     {
         public NumericStepper numericStepper = new NumericStepper();
 
-        public SpinBox(Ref<byte> value, string text) : base(text)
+        public SpinBox(Ref<byte> value, string text = "") : base(text)
         {
             _valueType = value.Value.GetType();
             _value = value;
@@ -17,7 +18,7 @@ namespace Eliza.UI.Widgets
             Setup();
         }
 
-        public SpinBox(Ref<ushort> value, string text) : base(text)
+        public SpinBox(Ref<ushort> value, string text = "") : base(text)
         {
             _valueType = value.Value.GetType();
             _value = value;
@@ -26,7 +27,7 @@ namespace Eliza.UI.Widgets
             Setup();
         }
 
-        public SpinBox(Ref<uint> value, string text) : base(text)
+        public SpinBox(Ref<uint> value, string text = "") : base(text)
         {
             _valueType = value.Value.GetType();
             _value = value;
@@ -35,7 +36,7 @@ namespace Eliza.UI.Widgets
             Setup();
         }
 
-        public SpinBox(Ref<ulong> value, string text) : base(text)
+        public SpinBox(Ref<ulong> value, string text = "") : base(text)
         {
             _valueType = value.Value.GetType();
             _value = value;
@@ -44,7 +45,7 @@ namespace Eliza.UI.Widgets
             Setup();
         }
 
-        public SpinBox(Ref<sbyte> value, string text) : base(text)
+        public SpinBox(Ref<sbyte> value, string text = "") : base(text)
         {
             _valueType = value.Value.GetType();
             _value = value;
@@ -53,7 +54,7 @@ namespace Eliza.UI.Widgets
             Setup();
         }
 
-        public SpinBox(Ref<short> value, string text) : base(text)
+        public SpinBox(Ref<short> value, string text = "") : base(text)
         {
             _valueType = value.Value.GetType();
             _value = value;
@@ -62,7 +63,7 @@ namespace Eliza.UI.Widgets
             Setup();
         }
 
-        public SpinBox(Ref<int> value, string text) : base(text)
+        public SpinBox(Ref<int> value, string text = "") : base(text)
         {
             _valueType = value.Value.GetType();
             _value = value;
@@ -71,7 +72,7 @@ namespace Eliza.UI.Widgets
             Setup();
         }
 
-        public SpinBox(Ref<long> value, string text) : base(text)
+        public SpinBox(Ref<long> value, string text = "") : base(text)
         {
             _valueType = value.Value.GetType();
             _value = value;
@@ -80,7 +81,7 @@ namespace Eliza.UI.Widgets
             Setup();
         }
 
-        public SpinBox(Ref<float> value, string text) : base(text)
+        public SpinBox(Ref<float> value, string text = "") : base(text)
         {
             _valueType = value.Value.GetType();
             _value = value;
@@ -89,7 +90,7 @@ namespace Eliza.UI.Widgets
             Setup();
         }
 
-        public SpinBox(Ref<double> value, string text) : base(text)
+        public SpinBox(Ref<double> value, string text = "") : base(text)
         {
             _valueType = value.Value.GetType();
             _value = value;
@@ -98,7 +99,7 @@ namespace Eliza.UI.Widgets
             Setup();
         }
 
-        public SpinBox(string text) : base(text)
+        public SpinBox(string text = "") : base(text)
         {
             Items.Add(numericStepper);
             numericStepper.ValueChanged += OnValueChanged;

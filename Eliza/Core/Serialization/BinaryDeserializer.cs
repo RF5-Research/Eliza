@@ -206,8 +206,8 @@ namespace Eliza.Core.Serialization
 
         private Model.SaveData.SaveDataFooter ReadSaveDataFooter(Type type)
         {
-            //Aligned relative to data 256 bytes due to Rijndael crypto
-            BaseStream.Position = ((BaseStream.Position - 0x20 + 0xFF) & ~0xFF) + 0x20;
+            //Aligned relative to data 256bits due to Rijndael crypto
+            BaseStream.Position = ((BaseStream.Position - 0x20 + 0x1F) & ~0x1F) + 0x20;
             return (Model.SaveData.SaveDataFooter)ReadObject(type);
         }
 

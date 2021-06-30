@@ -159,8 +159,8 @@ namespace Eliza.Core.Serialization
             using (var reader = new BinaryReader(BaseStream))
             {
                 var bodyLength = BaseStream.Length;
-                //Aligned relative to data 256 bytes due to Rijndael crypto
-                var paddedSize = (int)((BaseStream.Position - 0x20 + 0xFF) & ~0xFF) + 0x20;
+                //Aligned relative to data 256 bits due to Rijndael crypto
+                var paddedSize = (int)((BaseStream.Position - 0x20 + 0x1F) & ~0x1F) + 0x20;
                 BaseStream.SetLength(paddedSize);
 
                 BaseStream.Position = 0x0;
@@ -169,8 +169,8 @@ namespace Eliza.Core.Serialization
 
                 var data = reader.ReadBytes(paddedSize - headerSize);
 
-                //var encryptedData = Cryptography.Encrypt(data);
-                var encryptedData = data;
+                var encryptedData = Cryptography.Encrypt(data);
+
 
                 //Overwrite save data with encrypted data
                 BaseStream.Position = headerSize;

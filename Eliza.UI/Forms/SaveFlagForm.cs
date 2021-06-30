@@ -1,10 +1,9 @@
 ﻿using Eliza.UI.Widgets;
 using Eto.Forms;
-using System;
 
 namespace Eliza.UI.Forms
 {
-    public class SaveFlagForm : Form
+    internal class SaveFlagForm : Form
     {
         public SaveFlagForm(Model.SaveFlagStorage saveFlag)
         {
