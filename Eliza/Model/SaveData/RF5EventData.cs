@@ -5,6 +5,8 @@
         public EventSaveParameter EventSaveParameter;
         public SaveFlagStorage SaveFlag;
         public SubEventSaveData SubEventSaveDatas;
+        // Add this to the UI
+        public SaveScenarioSupport ScenarioSupport;
         public int MainScenarioStep;
         public int[] PresentSendActorList;
         public int[] PresentRecvActorList;

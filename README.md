@@ -1,9 +1,6 @@
 # Eliza
  A cross-platform (RF5) Rune Factory 5 Save Editor
 
-## Requirements
-- [.NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0)
-
 ## Building
 1. Install the [.NET 5.0+ SDK](https://dotnet.microsoft.com/download/dotnet/5.0)
 2. Download the repository by clicking the ``Clone`` dropdownbox and clicking either ``Download Zip`` or ``Open with Github Desktop``.
