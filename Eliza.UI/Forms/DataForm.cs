@@ -1,4 +1,5 @@
-﻿using Eliza.UI.Widgets;
+﻿using Eliza.Model.SaveData;
+using Eliza.UI.Widgets;
 using Eto.Forms;
 using System;
 
@@ -106,7 +107,7 @@ namespace Eliza.UI.Forms
 
             var statusDataButton = new Button()
             {
-                Text = "Status Data"
+                Text = "Max Monster Friendship"
             };
 
             statusDataButton.Click += StatusDataButton_Click;
@@ -301,7 +302,7 @@ namespace Eliza.UI.Forms
 
         private void StatusDataButton_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            this.MaxMonsterFriendship(_saveData.saveData.statusData);
         }
 
         private void FarmDataButton_Click(object sender, EventArgs e)
@@ -314,7 +315,13 @@ namespace Eliza.UI.Forms
             throw new NotImplementedException();
         }
 
-
+        private void MaxMonsterFriendship(RF5StatusData statusData)
+        {
+            foreach(var monster in statusData.FriendMonsterStatusDatas)
+            {
+                monster.LovePoint = 255;
+            }
+        }
 
 
     }

@@ -2,6 +2,9 @@
 using Eliza.UI.Helpers;
 using Eto.Forms;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace Eliza.UI.Widgets
 {
@@ -24,52 +27,21 @@ namespace Eliza.UI.Widgets
         public ItemStorageDataGroup(ItemStorageData itemStorageData, string text = "Item Storage Data") : base(text)
         {
             _itemStorageData = itemStorageData;
+            var itemNames = ItemNames.GetInstance().GetItemNames();
+
 
             for (int i = 0; i < itemStorageData.ItemDatas.Length; i++)
             {
-                switch (itemStorageData.ItemDatas[i])
+
+                // Get item name for specific item.
+                string name = $"Item {i}";
+
+                if (itemStorageData.ItemDatas[i] != null)
                 {
-                    case PotToolItemData:
-                        {
-                            list.Items.Add($"Pot Tool Item {i}");
-                            break;
-                        }
-                    case FishItemData:
-                        {
-                            list.Items.Add($"Fish Item {i}");
-                            break;
-                        }
-                    case RuneAbilityItemData:
-                        {
-                            list.Items.Add($"Rune Ability Item {i}");
-                            break;
-                        }
-                    case EquipItemData:
-                        {
-                            list.Items.Add($"Equip Item {i}");
-                            break;
-                        }
-                    case FoodItemData:
-                        {
-                            list.Items.Add($"Food Item {i}");
-                            break;
-                        }
-                    case SeedItemData:
-                        {
-                            list.Items.Add($"Seed Item {i}");
-                            break;
-                        }
-                    case AmountItemData:
-                        {
-                            list.Items.Add($"Amount Item {i}");
-                            break;
-                        }
-                    default:
-                        {
-                            list.Items.Add($"Item {i}");
-                            break;
-                        }
+                    name = itemNames[itemStorageData.ItemDatas[i].ItemID];
                 }
+
+                list.Items.Add(name);
             }
 
             list.SelectedIndexChanged += (object sender, EventArgs e) =>
@@ -280,6 +252,17 @@ namespace Eliza.UI.Widgets
                 var levelAmountData = new VBox();
 
                 var spinBox = new SpinBox();
+                var maxQty = new Button()
+                {
+                    Text = "Max Qty"
+                };
+                var maxQuality = new Button()
+                {
+                    Text = "Max Quality"
+                };
+
+                maxQty.Click += maxQtyButton_Click;
+                maxQuality.Click += MaxQuality_Click;
 
                 levelAmountList.SelectedIndexChanged += (object sender, EventArgs e) =>
                 {
@@ -287,11 +270,13 @@ namespace Eliza.UI.Widgets
                         new Ref<int>(() => ((AmountItemData)_itemStorageData.ItemDatas[list.SelectedIndex]).LevelAmount[levelAmountList.SelectedIndex], v => { ((AmountItemData)_itemStorageData.ItemDatas[list.SelectedIndex]).LevelAmount[levelAmountList.SelectedIndex] = v; })
                     );
                 };
-               levelAmountData.Items.Add(spinBox);
+                levelAmountData.Items.Add(spinBox);
+                levelAmountData.Items.Add(maxQty);
+                levelAmountData.Items.Add(maxQuality);
 
                 levelAmountHBox.Items.Add(levelAmountList);
                 levelAmountHBox.Items.Add(levelAmountData);
-
+                
                 levelAmount.Content = levelAmountHBox;
 
                 amountItemDataPageUpdate = delegate (ItemData item)
@@ -309,6 +294,8 @@ namespace Eliza.UI.Widgets
                         }
                     }
                 };
+
+                
 
                 var vBox = new VBox();
                 StackLayoutItem[] vBoxItems =
@@ -350,6 +337,17 @@ namespace Eliza.UI.Widgets
                 var levelAmountData = new VBox();
 
                 var spinBox = new SpinBox();
+                var maxQty = new Button()
+                {
+                    Text = "Max Qty"
+                };
+                var maxQuality = new Button()
+                {
+                    Text = "Max Quality"
+                };
+
+                maxQty.Click += maxQtyButton_Click;
+                maxQuality.Click += MaxQuality_Click;
 
                 levelAmountList.SelectedIndexChanged += (object sender, EventArgs e) =>
                 {
@@ -359,6 +357,8 @@ namespace Eliza.UI.Widgets
                 };
 
                 levelAmountData.Items.Add(spinBox);
+                levelAmountData.Items.Add(maxQty);
+                levelAmountData.Items.Add(maxQuality);
 
                 levelAmountHBox.Items.Add(levelAmountList);
                 levelAmountHBox.Items.Add(levelAmountData);
@@ -386,7 +386,7 @@ namespace Eliza.UI.Widgets
                     //ItemData
                     itemID,
                     //AmountItemData
-                    levelAmount,
+                    levelAmount,                    
                 };
 
                 var vBox = new VBox();
@@ -1122,6 +1122,25 @@ namespace Eliza.UI.Widgets
 
             Content = parentHBox;
             
+        }
+
+        private void MaxQuality_Click(object sender, EventArgs e)
+        {
+            var amount = ((AmountItemData)_itemStorageData.ItemDatas[list.SelectedIndex]).LevelAmount;
+            for (int i = 0; i < amount.Count; i++)
+            {
+                amount[i] = 10;
+            }
+        }
+
+        private void maxQtyButton_Click(object sender, EventArgs e)
+        {
+            var amount = ((AmountItemData)_itemStorageData.ItemDatas[list.SelectedIndex]).LevelAmount;
+
+            while (amount.Count < 9)
+            {
+                amount.Add(10);
+            }
         }
 
         //        public void GenerateWidgets()

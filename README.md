@@ -8,9 +8,10 @@
 4. Open a console (command prompt, git bash, etc.) in the repository folder, and run ``dotnet publish [TargetPlatform] -c Release`` with ``[TargetPlatform]`` being either ``Eliza.Windows`` (Windows), ``Eliza.Linux`` (Linux), or ``Eliza.Mac`` (MacOS) to build the binary.
  
 ## Maintainers
-- [SinsofSloth](https://github.com/SinsofSloth)
+
 
 ## Credits and Thanks
 - [SPICA](https://github.com/gdkchan/SPICA) for base for serialization
 - Blazagon for name data
 - bluedart and other testers
+- Item list from: https://docs.google.com/spreadsheets/d/13-ql1gKkne1F4c9rzgAw3woR8PXR6_vb 
